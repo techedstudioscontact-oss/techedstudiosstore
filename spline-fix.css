@@ -1,0 +1,40 @@
+/* Spline viewer loading state and error handling */
+.hero-animation {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 0 auto var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Loading state for 3D viewer */
+.hero-animation::before {
+    content: 'Loading 3D animation...';
+    position: absolute;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    z-index: -1;
+}
+
+.hero-animation spline-viewer {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hide animation on error or if not loaded */
+.hero-animation:empty::before {
+    content: '';
+    display: none;
+}

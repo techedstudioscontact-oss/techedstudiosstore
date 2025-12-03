@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teched Studios Store - Discover and download amazing apps for your devices">
+    <meta name="keywords" content="app store, mobile apps, android apps, download apps, teched studios">
+    <title>Teched Studios Store - Your Premier App Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="toast.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="favorites.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.5/build/spline-viewer.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 22V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M22 7L12 12L2 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <h1 class="brand-title">Teched Studios</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-page="store">Store</a>
+                <a href="#" class="nav-link" data-page="categories">Categories</a>
+                <a href="#" class="nav-link admin-link" data-page="admin">Admin</a>
+            </div>
+
+            <!-- User Authentication -->
+            <div class="nav-auth">
+                <!-- Login Button (shown when not logged in) -->
+                <button id="auth-button" class="btn btn-primary auth-btn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Login
+                </button>
+
+                <!-- User Profile (shown when logged in) -->
+                <div id="user-profile" class="user-profile" style="display: none;">
+                    <div class="user-avatar" id="user-avatar">U</div>
+                    <div class="user-dropdown">
+                        <div class="dropdown-header">
+                            <div class="user-avatar-large" id="user-avatar-large">U</div>
+                            <div class="user-info">
+                                <div class="user-name" id="user-name">User Name</div>
+                                <div class="user-email" id="user-email">user@example.com</div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" id="logout-btn">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 2.58579C3.96086 2.21071 4.46957 2 5 2H9"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Store Page -->
+    <main id="store-page" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <!-- 3D Animation -->
+                <div class="hero-animation">
+                    <spline-viewer url="https://prod.spline.design/GWfObyctD-ddBrU0/scene.splinecode"></spline-viewer>
+                </div>
+
+                <h2 class="hero-title">Discover Amazing Apps</h2>
+                <p class="hero-subtitle">Explore our curated collection of premium applications</p>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" />
+                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search for apps...">
+                </div>
+
+                <!-- Category Filter -->
+                <div class="category-filter">
+                    <button class="category-btn active" data-category="all">All Apps</button>
+                    <button class="category-btn" data-category="games">Games</button>
+                    <button class="category-btn" data-category="productivity">Productivity</button>
+                    <button class="category-btn" data-category="social">Social</button>
+                    <button class="category-btn" data-category="education">Education</button>
+                    <button class="category-btn" data-category="utilities">Utilities</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apps Grid -->
+        <section class="apps-section">
+            <div class="section-header">
+                <h3 class="section-title">Featured Apps</h3>
+                <p class="apps-count" id="apps-count">Loading...</p>
+            </div>
+            <div id="apps-grid" class="apps-grid">
+                <!-- Loading spinner -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading apps...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- App Detail Page -->
+    <div id="app-detail-page" class="page">
+        <button class="back-button" id="back-to-store">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Back to Store
+        </button>
+
+        <div id="app-detail-content" class="app-detail-content">
+            <!-- Content will be dynamically inserted -->
+        </div>
+    </div>
+
+    <!-- Admin Page -->
+    <div id="admin-page" class="page">
+        <div class="admin-container">
+            <!-- Login Form -->
+            <div id="admin-login" class="admin-login">
+                <div class="login-card">
+                    <h2 class="admin-title">Admin Access</h2>
+                    <p class="admin-subtitle">Enter your credentials to manage apps</p>
+                    <form id="admin-login-form">
+                        <div class="form-group">
+                            <label for="admin-password">Password</label>
+                            <input type="password" id="admin-password" class="form-input"
+                                placeholder="Enter admin password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                        <p class="error-message" id="login-error"></p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Admin Dashboard -->
+            <div id="admin-dashboard" class="admin-dashboard" style="display: none;">
+                <div class="dashboard-header">
+                    <h2 class="dashboard-title">App Management</h2>
+                    <div class="dashboard-actions">
+                        <button id="upload-app-btn" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            Upload New App
+                        </button>
+                        <button id="admin-logout-btn" class="btn btn-secondary">Logout</button>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-primary">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M3 9H21" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Total Apps</p>
+                            <p class="stat-value" id="total-apps-stat">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-success">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                    stroke="currentColor" stroke-width="2" />
+                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Total Downloads</p>
+                            <p class="stat-value" id="total-downloads-stat">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-warning">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Categories</p>
+                            <p class="stat-value" id="categories-stat">6</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apps Management Table -->
+                <div class="apps-table-container">
+                    <h3 class="table-title">Manage Apps</h3>
+                    <div id="admin-apps-list" class="admin-apps-list">
+                        <!-- Apps will be dynamically inserted -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content auth-modal-content">
+            <!-- Login Form -->
+            <div id="login-form-container" class="auth-form-container">
+                <div class="modal-header">
+                    <h3 class="modal-title">Welcome Back</h3>
+                    <button class="modal-close" id="close-auth-modal">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" class="form-input" placeholder="Enter your password"
+                            required>
+                    </div>
+                    <p class="error-message" id="login-error"></p>
+                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+
+                <button id="google-signin-btn" class="btn btn-secondary btn-full google-btn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="width: 20px; height: 20px;">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    Continue with Google
+                </button>
+
+                <div class="auth-footer">
+                    <button type="button" id="forgot-password-btn" class="link-btn">Forgot password?</button>
+                    <p>Don't have an account? <button type="button" id="switch-to-signup" class="link-btn">Sign
+                            up</button></p>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup-form-container" class="auth-form-container" style="display: none;">
+                <div class="modal-header">
+                    <h3 class="modal-title">Create Account</h3>
+                    <button class="modal-close" onclick="closeAuthModal()">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+                <form id="signup-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" class="form-input" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" class="form-input" placeholder="Enter your email"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" class="form-input" placeholder="Create a password"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" class="form-input"
+                            placeholder="Confirm your password" required>
+                    </div>
+                    <p class="error-message" id="signup-error"></p>
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+
+                <button id="google-signup-btn" class="btn btn-secondary btn-full google-btn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="width: 20px; height: 20px;">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    Continue with Google
+                </button>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <button type="button" id="switch-to-login" class="link-btn">Sign
+                            in</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="upload-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Upload New App</h3>
+                <button class="modal-close" id="close-modal">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+            <form id="upload-form" class="upload-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="app-name">App Name *</label>
+                        <input type="text" id="app-name" class="form-input" placeholder="Enter app name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="app-developer">Developer *</label>
+                        <input type="text" id="app-developer" class="form-input" placeholder="Enter developer name"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="app-category">Category *</label>
+                        <select id="app-category" class="form-input" required>
+                            <option value="">Select category</option>
+                            <option value="games">Games</option>
+                            <option value="productivity">Productivity</option>
+                            <option value="social">Social</option>
+                            <option value="education">Education</option>
+                            <option value="utilities">Utilities</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="app-version">Version *</label>
+                        <input type="text" id="app-version" class="form-input" placeholder="e.g., 1.0.0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="app-description">Description *</label>
+                    <textarea id="app-description" class="form-textarea" placeholder="Enter app description" rows="4"
+                        required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="app-size">Size (MB) *</label>
+                        <input type="number" id="app-size" class="form-input" placeholder="e.g., 25.5" step="0.1"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="app-icon-url">Icon URL *</label>
+                        <input type="url" id="app-icon-url" class="form-input"
+                            placeholder="https://example.com/icon.png" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="app-screenshots">Screenshot URLs (comma-separated, max 5)</label>
+                    <input type="text" id="app-screenshots" class="form-input"
+                        placeholder="https://example.com/1.png, https://example.com/2.png">
+                    <small class="form-hint">Enter up to 5 screenshot URLs separated by commas</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="app-download-url">Download Link *</label>
+                    <input type="url" id="app-download-url" class="form-input" placeholder="https://example.com/app.apk"
+                        required>
+                </div>
+
+                <input type="hidden" id="edit-app-id">
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-upload">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submit-app">Upload App</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+    <!-- App Scripts -->
+    <script src="firebase-config.js"></script>
+    <script src="toast.js"></script>
+    <script src="favorites.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

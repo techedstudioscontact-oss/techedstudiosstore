@@ -1,0 +1,224 @@
+/* ==================== Favorites System Styles ==================== */
+
+/* Favorite Button */
+.favorite-btn {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10;
+    padding: 0;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.favorite-btn:active {
+    transform: scale(0.95);
+}
+
+.heart-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.heart-outline {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.heart-fill {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Active (favorited) state */
+.favorite-btn.active {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: var(--error);
+}
+
+.favorite-btn.active .heart-icon {
+    color: var(--error);
+}
+
+.favorite-btn.active .heart-outline {
+    opacity: 0;
+}
+
+.favorite-btn.active .heart-fill {
+    opacity: 1;
+}
+
+/* Animation when toggling */
+.favorite-btn.animating {
+    animation: heartbeat 0.6s ease;
+}
+
+.favorite-btn.animating .heart-icon {
+    animation: heartPulse 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes heartPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.3);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*Favorites Counter in User Profile */
+.favorites-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 20px;
+    height: 20px;
+    background: var(--error);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+    animation: scaleIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Favorites Page */
+.favorites-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+}
+
+.favorites-header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.favorites-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.favorites-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+/* Empty State */
+.favorites-empty {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: var(--bg-glass);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+}
+
+.empty-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.empty-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.empty-message {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+.empty-action {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--accent-gradient);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-glow);
+    text-decoration: none;
+}
+
+.empty-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+/* App card needs relative positioning for absolute favorite button */
+.app-card {
+    position: relative;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .favorite-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .heart-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .favorites-title {
+        font-size: 2rem;
+    }
+}
