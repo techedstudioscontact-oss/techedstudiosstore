@@ -6,7 +6,7 @@
     
     <!-- Homepage / Store -->
     <url>
-        <loc>https://studio-5544692416-e730a.web.app/</loc>
+        <loc>https://techedstudioscontact-oss.github.io/techedstudiosstore/</loc>
         <lastmod>2025-12-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -14,7 +14,7 @@
     
     <!-- Store Page -->
     <url>
-        <loc>https://studio-5544692416-e730a.web.app/store</loc>
+        <loc>https://techedstudioscontact-oss.github.io/techedstudiosstore/store</loc>
         <lastmod>2025-12-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -22,7 +22,7 @@
     
     <!-- Categories Page -->
     <url>
-        <loc>https://studio-5544692416-e730a.web.app/categories</loc>
+        <loc>https://techedstudioscontact-oss.github.io/techedstudiosstore/categories</loc>
         <lastmod>2025-12-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -30,7 +30,7 @@
     
     <!-- Category: Games -->
     <url>
-        <loc>https://studio-5544692416-e730a.web.app/categories/games</loc>
+        <loc>https://techedstudioscontact-oss.github.io/techedstudiosstore/categories/games</loc>
         <lastmod>2025-12-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -38,7 +38,7 @@
     
     <!-- Category: Productivity -->
     <url>
-        <loc>https://studio-5544692416-e730a.web.app/categories/productivity</loc>
+        <loc>https://techedstudioscontact-oss.github.io/techedstudiosstore/categories/productivity</loc>
         <lastmod>2025-12-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -46,7 +46,7 @@
     
     <!-- Category: Social -->
     <url>
-        <loc>https://studio-5544692416-e730a.web.app/categories/social</loc>
+        <loc>https://techedstudioscontact-oss.github.io/techedstudiosstore/categories/social</loc>
         <lastmod>2025-12-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -54,7 +54,7 @@
     
     <!-- Category: Education -->
     <url>
-        <loc>https://studio-5544692416-e730a.web.app/categories/education</loc>
+        <loc>https://techedstudioscontact-oss.github.io/techedstudiosstore/categories/education</loc>
         <lastmod>2025-12-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -62,7 +62,7 @@
     
     <!-- Category: Utilities -->
     <url>
-        <loc>https://studio-5544692416-e730a.web.app/categories/utilities</loc>
+        <loc>https://techedstudioscontact-oss.github.io/techedstudiosstore/categories/utilities</loc>
         <lastmod>2025-12-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>

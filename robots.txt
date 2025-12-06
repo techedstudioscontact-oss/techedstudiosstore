@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://studio-5544692416-e730a.web.app/sitemap.xml
+Sitemap: https://techedstudioscontact-oss.github.io/techedstudiosstore/sitemap.xml
 
 # Disallow admin pages
 Disallow: /admin
